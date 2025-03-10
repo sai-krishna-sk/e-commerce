@@ -260,7 +260,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-serif mb-10">WHAT OUR CUSTOMERS SAY</h2>
           <div className="max-w-4xl mx-auto italic text-xl font-light">
-            "The craftsmanship of these pieces is truly exceptional. I receive compliments every time I wear my necklace."
+            '"The craftsmanship of these pieces is truly exceptional. I receive compliments every time I wear my necklace."'
             <div className="mt-6 font-normal text-base">— Emily S.</div>
           </div>
         </div>
