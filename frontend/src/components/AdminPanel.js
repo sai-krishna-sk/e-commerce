@@ -1,7 +1,7 @@
 // components/AdminPanel.js
 import { useState, useEffect } from "react";
 import { useAuth } from "@/context/AuthContext";
-import { fetchProducts } from "@/utils/api";
+import { fetchProducts, addProduct, deleteProduct } from "@/utils/api";
 
 const AdminPanel = () => {
   const { user } = useAuth();
@@ -24,6 +24,7 @@ const AdminPanel = () => {
       setLoading(false);
     } catch (error) {
       console.error("Failed to load products:", error);
+      setMessage("Failed to load products: " + error.message);
       setLoading(false);
     }
   };
@@ -37,51 +38,34 @@ const AdminPanel = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: JSON.stringify({ name, price: Number(price), image }),
-      });
-
-      const data = await response.json();
-      if (response.ok) {
-        setMessage("Product added successfully!");
-        // Reset form fields
-        setName("");
-        setPrice("");
-        setImage("");
-        // Reload products list
-        loadProducts();
-      } else {
-        setMessage(data.error || "Failed to add product");
-      }
+      await addProduct({ name, price: Number(price), image }, user.token);
+      
+      setMessage("Product added successfully!");
+      // Reset form fields
+      setName("");
+      setPrice("");
+      setImage("");
+      // Reload products list
+      loadProducts();
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setMessage(error.message || "An error occurred. Please try again.");
     }
   };
 
   const handleDeleteProduct = async (productId) => {
-    try {
-      const response = await fetch(`http://127.0.0.1:5000/api/products/${productId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+    if (!user?.token) {
+      setMessage("You must be logged in as admin to delete products");
+      return;
+    }
 
-      if (response.ok) {
-        // Remove product from local state
-        setProducts(products.filter(product => product._id !== productId));
-        setMessage("Product deleted successfully!");
-      } else {
-        const data = await response.json();
-        setMessage(data.error || "Failed to delete product");
-      }
+    try {
+      await deleteProduct(productId, user.token);
+      
+      // Remove product from local state
+      setProducts(products.filter(product => product._id !== productId));
+      setMessage("Product deleted successfully!");
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setMessage(error.message || "An error occurred. Please try again.");
     }
   };
 
@@ -128,7 +112,7 @@ const AdminPanel = () => {
           </div>
           <button 
             type="submit"
-            className="w-full bg-rose-500 text-white p-3 rounded-md hover:bg-rose-600 transition-colors font-medium"
+            className="bg-rose-500 text-white py-3 px-6 rounded-md hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-400 transition-colors"
           >
             Add Product
           </button>
