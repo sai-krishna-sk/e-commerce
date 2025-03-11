@@ -33,24 +33,24 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-100">
+    <div className="min-h-screen bg-gradient-to-b from-white to-rose-50">
       <Navbar />
       <div className="container mx-auto px-4 py-16">
         <div className="mb-12 text-center">
-          <h1 className="text-3xl font-serif font-light text-amber-900 mb-4">Your Shopping Bag</h1>
-          <div className="w-24 h-px bg-amber-700 mx-auto"></div>
+          <h1 className="text-3xl font-serif font-light text-rose-900 mb-4">Your Shopping Bag</h1>
+          <div className="w-24 h-px bg-rose-400 mx-auto"></div>
         </div>
         
         {loading ? (
           <div className="flex justify-center my-16">
-            <div className="w-16 h-16 border-4 border-amber-200 border-t-amber-700 rounded-full animate-spin"></div>
+            <div className="w-16 h-16 border-4 border-rose-100 border-t-rose-500 rounded-full animate-spin"></div>
           </div>
         ) : cartItems.length === 0 ? (
-          <div className="text-center py-12 bg-white/60 rounded-lg shadow-sm max-w-xl mx-auto">
-            <p className="text-xl text-amber-800 mb-6">Your shopping bag is empty</p>
+          <div className="text-center py-12 bg-white/80 rounded-lg shadow-sm max-w-xl mx-auto">
+            <p className="text-xl text-rose-700 mb-6">Your shopping bag is empty</p>
             <button
               onClick={() => router.push('/')}
-              className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 rounded-md transition-all font-medium"
+              className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-md transition-all font-medium"
             >
               Explore Our Collection
             </button>
@@ -68,31 +68,31 @@ export default function CartPage() {
             </div>
             
             <div className="bg-white p-8 rounded-lg shadow-md h-fit">
-              <h2 className="text-2xl font-serif mb-6 text-amber-900">Order Summary</h2>
+              <h2 className="text-2xl font-serif mb-6 text-rose-900">Order Summary</h2>
               
-              <div className="space-y-4 mb-6 pb-6 border-b border-amber-100">
-                <div className="flex justify-between text-amber-800">
+              <div className="space-y-4 mb-6 pb-6 border-b border-rose-100">
+                <div className="flex justify-between text-rose-700">
                   <span>Subtotal</span>
                   <span>${totalPrice.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-amber-800">
+                <div className="flex justify-between text-rose-700">
                   <span>Shipping</span>
                   <span>Free</span>
                 </div>
               </div>
               
-              <div className="flex justify-between text-xl font-medium mb-8 text-amber-900">
+              <div className="flex justify-between text-xl font-medium mb-8 text-rose-900">
                 <span>Total</span>
                 <span>${totalPrice.toFixed(2)}</span>
               </div>
               
               <button 
-                className="w-full bg-amber-700 hover:bg-amber-800 text-white py-3 rounded-md transition-all font-medium"
+                className="w-full bg-rose-500 hover:bg-rose-600 text-white py-3 rounded-md transition-all font-medium"
               >
                 Proceed to Checkout
               </button>
               
-              <p className="text-center text-amber-700 mt-4 text-sm">
+              <p className="text-center text-rose-600 mt-4 text-sm">
                 Secure checkout • Free returns
               </p>
             </div>
