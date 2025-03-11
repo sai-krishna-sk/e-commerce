@@ -1,7 +1,7 @@
 // components/CartItem.js
 export default function CartItem({ item, removeFromCart }) {
   return (
-    <div className="flex items-center bg-white p-6 rounded-lg shadow-sm border border-amber-100">
+    <div className="flex items-center bg-white p-6 rounded-lg shadow-sm border border-rose-100">
       <div className="w-24 h-24 rounded-md overflow-hidden">
         <img 
           src={item.image} 
@@ -10,11 +10,11 @@ export default function CartItem({ item, removeFromCart }) {
         />
       </div>
       <div className="ml-6 flex-1">
-        <h2 className="text-lg font-medium text-amber-900">{item.name}</h2>
-        <p className="text-amber-700 font-serif mt-1">${item.price}</p>
+        <h2 className="text-lg font-medium text-rose-900">{item.name}</h2>
+        <p className="text-rose-600 font-serif mt-1">${item.price}</p>
       </div>
       <button
-        className="px-3 py-2 text-amber-700 hover:text-amber-900 transition-colors"
+        className="px-3 py-2 text-rose-500 hover:text-rose-700 transition-colors"
         onClick={() => removeFromCart(item._id)}
       >
         <span className="sr-only">Remove</span>
