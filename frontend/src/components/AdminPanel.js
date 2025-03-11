@@ -97,38 +97,38 @@ const AdminPanel = () => {
         )}
         <form onSubmit={handleAddProduct} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-rose-700 mb-2">Product Name</label>
+            <label className="block text-rose-700 mb-2 text-sm">Product Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
+              className="w-full p-3 border border-rose-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-300 text-rose-900"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-rose-700 mb-2">Price ($)</label>
+            <label className="block text-rose-700 mb-2 text-sm">Price ($)</label>
             <input
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
+              className="w-full p-3 border border-rose-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-300 text-rose-900"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-rose-700 mb-2">Image URL</label>
+            <label className="block text-rose-700 mb-2 text-sm">Image URL</label>
             <input
               type="text"
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
+              className="w-full p-3 border border-rose-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-300 text-rose-900"
               required
             />
           </div>
           <button 
             type="submit"
-            className="bg-rose-500 text-white py-3 px-6 rounded-md hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-400 transition-colors"
+            className="w-full bg-rose-500 text-white p-3 rounded-md hover:bg-rose-600 transition-colors font-medium"
           >
             Add Product
           </button>
