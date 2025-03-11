@@ -89,7 +89,7 @@ const AdminPanel = () => {
     <div className="max-w-4xl mx-auto">      
       {/* Add Product Form */}
       <div className="bg-white p-8 rounded-lg shadow-md mb-12">
-        <h2 className="text-2xl font-serif text-amber-900 mb-6">Add New Jewelry Piece</h2>
+        <h2 className="text-2xl font-serif text-rose-900 mb-6">Add New Jewelry Piece</h2>
         {message && (
           <div className={`mb-6 p-4 ${message.includes("success") ? "bg-green-50 text-green-700 border border-green-100" : "bg-red-50 text-red-700 border border-red-100"} rounded-md`}>
             {message}
@@ -97,38 +97,38 @@ const AdminPanel = () => {
         )}
         <form onSubmit={handleAddProduct} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-amber-800 mb-2">Product Name</label>
+            <label className="block text-sm font-medium text-rose-700 mb-2">Product Name</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="block w-full rounded-md border-amber-200 shadow-sm focus:border-amber-500 focus:ring focus:ring-amber-200 p-3"
+              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-amber-800 mb-2">Price ($)</label>
+            <label className="block text-sm font-medium text-rose-700 mb-2">Price ($)</label>
             <input
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              className="block w-full rounded-md border-amber-200 shadow-sm focus:border-amber-500 focus:ring focus:ring-amber-200 p-3"
+              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-amber-800 mb-2">Image URL</label>
+            <label className="block text-sm font-medium text-rose-700 mb-2">Image URL</label>
             <input
               type="text"
               value={image}
               onChange={(e) => setImage(e.target.value)}
-              className="block w-full rounded-md border-amber-200 shadow-sm focus:border-amber-500 focus:ring focus:ring-amber-200 p-3"
+              className="block w-full rounded-md border-rose-200 shadow-sm focus:border-rose-400 focus:ring focus:ring-rose-100 p-3"
               required
             />
           </div>
           <button 
             type="submit"
-            className="bg-amber-700 text-white py-3 px-6 rounded-md hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors"
+            className="bg-rose-500 text-white py-3 px-6 rounded-md hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-400 transition-colors"
           >
             Add Product
           </button>
@@ -137,15 +137,15 @@ const AdminPanel = () => {
       
       {/* Products List */}
       <div className="bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-serif text-amber-900 mb-6">Manage Inventory</h2>
+        <h2 className="text-2xl font-serif text-rose-900 mb-6">Manage Inventory</h2>
         {loading ? (
           <div className="flex justify-center my-10">
-            <div className="w-12 h-12 border-4 border-amber-200 border-t-amber-700 rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-4 border-rose-100 border-t-rose-500 rounded-full animate-spin"></div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {products.map(product => (
-              <div key={product._id} className="border border-amber-100 rounded-lg p-4 flex items-center bg-amber-50/50">
+              <div key={product._id} className="border border-rose-100 rounded-lg p-4 flex items-center bg-rose-50/30">
                 <div className="w-20 h-20 overflow-hidden rounded-md mr-4 bg-white">
                   <img 
                     src={product.image} 
@@ -154,13 +154,13 @@ const AdminPanel = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-medium text-amber-900">{product.name}</h3>
-                  <p className="text-amber-700 font-serif">${product.price}</p>
+                  <h3 className="font-medium text-rose-900">{product.name}</h3>
+                  <p className="text-rose-600 font-serif">${product.price}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => handleDeleteProduct(product._id)}
-                    className="bg-amber-700 text-white py-2 px-3 rounded-md hover:bg-amber-800 transition-colors"
+                    className="bg-rose-500 text-white py-2 px-3 rounded-md hover:bg-rose-600 transition-colors"
                   >
                     Delete
                   </button>
@@ -168,7 +168,7 @@ const AdminPanel = () => {
               </div>
             ))}
             {products.length === 0 && (
-              <p className="col-span-2 text-center text-amber-600 py-8">No products available in inventory.</p>
+              <p className="col-span-2 text-center text-rose-500 py-8">No products available in inventory.</p>
             )}
           </div>
         )}
