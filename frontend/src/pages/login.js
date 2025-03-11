@@ -42,10 +42,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-amber-50 to-amber-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-rose-50">
       <div className="relative w-full max-w-md p-10 bg-white rounded-lg shadow-md">
-        <div className="absolute top-0 left-0 w-full h-1 bg-amber-700"></div>
-        <h2 className="text-3xl font-serif text-center mb-8 text-amber-900">Account Login</h2>
+        <div className="absolute top-0 left-0 w-full h-1 bg-rose-400"></div>
+        <h2 className="text-3xl font-serif text-center mb-8 text-rose-900">Account Login</h2>
         {error && (
           <div className="bg-red-50 text-red-600 p-3 rounded-md mb-6 text-center text-sm border border-red-100">
             {error}
@@ -53,31 +53,31 @@ export default function LoginPage() {
         )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-amber-800 mb-2 text-sm">Username</label>
+            <label className="block text-rose-700 mb-2 text-sm">Username</label>
             <input
               type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
-              className="w-full p-3 border border-amber-200 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-amber-900"
+              className="w-full p-3 border border-rose-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-300 text-rose-900"
               required
             />
           </div>
           <div>
-            <label className="block text-amber-800 mb-2 text-sm">Password</label>
+            <label className="block text-rose-700 mb-2 text-sm">Password</label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full p-3 border border-amber-200 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-amber-900 pr-12"
+                className="w-full p-3 border border-rose-200 rounded-md focus:outline-none focus:ring-2 focus:ring-rose-300 text-rose-900 pr-12"
                 required
               />
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-amber-700 hover:text-amber-900 cursor-pointer"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-rose-500 hover:text-rose-700 cursor-pointer"
                 aria-label={showPassword ? "Hide password" : "Show password"}
               >
                 {showPassword ? (
@@ -95,13 +95,13 @@ export default function LoginPage() {
           </div>
           <button
             type="submit"
-            className="w-full bg-amber-700 text-white p-3 rounded-md hover:bg-amber-800 transition-colors font-medium"
+            className="w-full bg-rose-500 text-white p-3 rounded-md hover:bg-rose-600 transition-colors font-medium"
           >
             Sign In
           </button>
-          <div className="text-center text-amber-700 text-sm space-y-2">
+          <div className="text-center text-rose-600 text-sm space-y-2">
             <p>
-              Not registered? <Link href="/register" className="underline hover:text-amber-900">Create an account</Link>
+              Not registered? <Link href="/register" className="underline hover:text-rose-800">Create an account</Link>
             </p>
           </div>
         </form>
