@@ -34,7 +34,7 @@ This is a full-fledged e-commerce application designed to facilitate online shop
 
 ## Miscellaneous
 - **Local Storage**: Implemented local storage or user authentication to track cart data across sessions.
-- **Admin Panel**: A basic admin panel was used to manage products efficiently.
+- **Admin Panel**: A basic admin panel was used to manage products efficiently. (Can be accessed by only the admin login (username : "a", password: "a"))
 - **Deployment**: The application was deployed on cloud platform Vercel (For frontend), Render (For backend).
 
 ## Installation
@@ -53,7 +53,6 @@ To run this application locally, follow these steps:
 
 3. **Install backend dependencies**:
    ```bash
-   cd backend  # Navigate to the backend directory
    pip install -r requirements.txt 
    ```
 
@@ -63,9 +62,8 @@ To run this application locally, follow these steps:
    ```
 5. **Install frontend dependencies**:
    ```bash
-   cd ..
    npx create-next-app@latest frontend1
-   cd frontend1  # Navigate to the frontend directory
+   cd frontend1  # Navigate to the frontend1 directory
    npm install axios next-auth 
    ```
 6. **Copy frontend files to frontend1**
