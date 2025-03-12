@@ -51,27 +51,29 @@ To run this application locally, follow these steps:
    cd e-commerce
    ```
 
-3. **Install frontend dependencies**:
+3. **Install backend dependencies**:
    ```bash
-   cd frontend  # Navigate to the frontend directory
-   npm install  
+   cd backend  # Navigate to the backend directory
+   pip install -r requirements.txt 
    ```
 
-4. **Install backend dependencies**:
-   ```bash
-   cd ../backend  # Navigate to the backend directory
-   pip install -r requirements.txt  # For Flask
-   ```
-
-5. **Run the backend server**:
+4. **Run the backend server**:
    ```bash
    python app.py  # or the appropriate command for your setup
    ```
-
-6. **Run the frontend application**:
+5. **Install frontend dependencies**:
    ```bash
-   cd ../frontend
-   npm run dev  
+   cd ..
+   npx create-next-app@latest frontend1
+   cd frontend1  # Navigate to the frontend directory
+   npm install axios next-auth 
+   ```
+6. **Copy frontend files to frontend1**
+   Drag and drop the files in the frontend folder to the new frontend1 folder (Replace files if existing)
+   
+7. **Run the frontend application**:
+   ```bash
+   npm run dev #in frontend1 folder  
    ```
 
 7. **Open your browser** and go to `http://localhost:3000`.
