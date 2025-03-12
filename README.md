@@ -32,10 +32,10 @@ This is a full-fledged e-commerce application designed to facilitate online shop
   - **Add/Remove Products from Cart**: Endpoints to manage cart items.
 - **Database**: Using [MongoDB(atlas)](https://www.mongodb.com/) for data storage.
 
-## Bonus (Optional Enhancements)
-- **Local Storage**: Implement local storage or user authentication to track cart data across sessions.
-- **Admin Panel**: A basic admin panel to manage products efficiently.
-- **Deployment**: Deploy the application on a cloud platform such as AWS, Heroku, or Vercel.
+## Optional
+- **Local Storage**: Implemented local storage or user authentication to track cart data across sessions.
+- **Admin Panel**: A basic admin panel was used to manage products efficiently.
+- **Deployment**: The application was deployed on cloud platform Vercel (For frontend), Render (For backend).
 
 ## Installation
 
