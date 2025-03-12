@@ -58,12 +58,12 @@ To run this application locally, follow these steps:
 
 4. **Run the backend server**:
    ```bash
-   python app.py  # or the appropriate command for your setup
+   python app.py  
    ```
 5. **Install frontend dependencies**:
    ```bash
    npx create-next-app@latest frontend1
-   cd frontend1  # Navigate to the frontend1 directory
+   cd frontend1 
    npm install axios next-auth 
    ```
 6. **Copy frontend files to frontend1**
