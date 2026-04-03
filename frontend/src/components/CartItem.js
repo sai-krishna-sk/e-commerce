@@ -4,7 +4,7 @@ export default function CartItem({ item, removeFromCart }) {
     <div className="flex items-center bg-white p-6 rounded-lg shadow-sm border border-rose-100">
       <div className="w-24 h-24 rounded-md overflow-hidden">
         <img 
-          src={item.image} 
+          src={item.image?.startsWith('http') || item.image?.startsWith('/') ? item.image : `/images/${item.image}`} 
           alt={item.name} 
           className="w-full h-full object-cover"
         />

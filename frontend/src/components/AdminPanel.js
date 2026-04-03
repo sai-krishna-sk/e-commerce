@@ -132,7 +132,7 @@ const AdminPanel = () => {
               <div key={product._id} className="border border-rose-100 rounded-lg p-4 flex items-center bg-rose-50/30">
                 <div className="w-20 h-20 overflow-hidden rounded-md mr-4 bg-white">
                   <img 
-                    src={product.image} 
+                    src={product.image?.startsWith('http') || product.image?.startsWith('/') ? product.image : `/images/${product.image}`} 
                     alt={product.name}
                     className="w-full h-full object-cover"
                   />

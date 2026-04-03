@@ -66,14 +66,14 @@ export default function Home() {
   };
 
   const categories = [
-    { id: 1, name: "Necklaces", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/necklace.jpg" },
-    { id: 2, name: "Rings", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/ring.jpg" },
-    { id: 3, name: "Earrings", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/earring.jpg" },
-    { id: 4, name: "Bracelets", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/braclets.jpg" },
-    { id: 5, name: "Watches", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/watches.jpg" },
-    { id: 6, name: "Anklets", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/anklets.jpg" },
-    { id: 7, name: "Hairpins ", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/hairpin.webp" },
-    { id: 8, name: "Pendants", image: "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/Pendants.avif" }
+    { id: 1, name: "Necklaces", image: "/images/necklace.jpg" },
+    { id: 2, name: "Rings", image: "/images/ring.jpg" },
+    { id: 3, name: "Earrings", image: "/images/earring.jpg" },
+    { id: 4, name: "Bracelets", image: "/images/braclets.jpg" },
+    { id: 5, name: "Watches", image: "/images/watches.jpg" },
+    { id: 6, name: "Anklets", image: "/images/anklets.jpg" },
+    { id: 7, name: "Hairpins ", image: "/images/hairpin.webp" },
+    { id: 8, name: "Pendants", image: "/images/Pendants.avif" }
   ];
 
   const visibleCategories = showAllCategories ? categories : categories.slice(0, 3);
@@ -95,7 +95,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="relative h-160 w-full overflow-hidden">
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/DeWatermark.ai_1741710171184.png')] bg-cover bg-center opacity-90"></div>
+          <div className="absolute inset-0 bg-[url('/images/DeWatermark.ai_1741710171184.png')] bg-cover bg-center opacity-90"></div>
           <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-4xl md:text-5xl font-serif text-white-800 mb-4">TIMELESS ELEGANCE</h1>
             <p className="text-xl text-white-300 max-w-2xl">Discover our exquisite collection of handcrafted jewelry pieces</p>
@@ -253,18 +253,18 @@ export default function Home() {
                 </div>
                 <ImageCarousel 
                   images={[
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/1.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/12.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/10.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/2.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/11.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/5.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/7.avif",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/8.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/9.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/3.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/6.jpg",
-                    "https://raw.githubusercontent.com/sai-krishna-sk/e-commerce/refs/heads/main/public/images/featured/4.jpg",
+                    "/images/featured/1.jpg",
+                    "/images/featured/12.jpg",
+                    "/images/featured/10.jpg",
+                    "/images/featured/2.jpg",
+                    "/images/featured/11.jpg",
+                    "/images/featured/5.jpg",
+                    "/images/featured/7.avif",
+                    "/images/featured/8.jpg",
+                    "/images/featured/9.jpg",
+                    "/images/featured/3.jpg",
+                    "/images/featured/6.jpg",
+                    "/images/featured/4.jpg",
                   ]} 
                 />
               </div>
