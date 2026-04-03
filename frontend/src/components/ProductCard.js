@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
     > 
       <div className="relative h-64 overflow-hidden"> 
         <img 
-          src={product.image?.startsWith('http') || product.image?.startsWith('/') ? product.image : `/images/${product.image}`} 
+          src={product.image?.includes('raw.githubusercontent.com') ? `/images/${product.image.split('public/images/')[1]}` : (product.image?.startsWith('http') || product.image?.startsWith('/') ? product.image : `/images/${product.image}`)} 
           alt={product.name} 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
         /> 
